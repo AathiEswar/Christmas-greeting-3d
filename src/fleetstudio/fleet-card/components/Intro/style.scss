@@ -1,0 +1,146 @@
+:root {
+	--accent: #419ccb;
+	--primarry-1: #0b090a;
+	--secoondary-1: #0b090a;
+
+	// --primarry-2: #242423;
+	// --secoondary-2: #333533;
+
+	--primarry-2: #0b090a;
+	 --secoondary-2: #0b090a;
+
+
+
+	--primary-3: #0b090a;
+}
+.intro-screen {
+	top: 0;
+	position: absolute;
+	z-index: 1000;
+	height: 100vh;
+	width: 100vw;
+	// background: linear-gradient(
+	// 	to bottom,
+	// 	var(--primarry-1),
+	// 	var(--secoondary-2)
+	// );
+}
+
+.intro-texts {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+}
+
+.intro-dot {
+	font-size: 4vw;
+}
+
+.p-innerText {
+	text-transform: uppercase;
+	font-size: 6rem;
+	text-align: center;
+	color: var(--accent);
+	margin: 0;
+	line-height: 0rem;
+	font-family: "Bebas Neue";
+}
+
+.container-innerText {
+	background: linear-gradient(
+		to bottom,
+		var(--primarry-1),
+		var(--secoondary-2)
+	);
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	place-content: center;
+	height: 100vh;
+}
+
+.intro-container {
+	// background: linear-gradient(to bottom, var(--primarry-1), var(--primarry-2));
+	color: var(--as-white);
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	font-size: 40px;
+}
+
+.loading-page {
+	position: absolute;
+	top: 0;
+	left: 0;
+	// background: var(--primary-3);
+	background-color: transparent;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	align-items: center;
+	justify-content: center;
+	color: #191654;
+}
+
+#svg {
+	aspect-ratio: 1/1;
+	// min-width: 280px;
+	// max-width: 25%;
+	stroke: var(--accent);
+	/* fill: var(--accent); */
+	/* fill-opacity: 0; */
+	stroke-width: 20px;
+	// animation: draw 6s ease;
+	height: 500px;
+	width: 500px;
+	@media (max-width: 425px) {
+		height: 300px;
+		width: 300px;
+	}
+	@media (min-width : 1440px) {
+		height: 700px ;
+		width: 700px;
+	}
+}
+
+// @keyframes draw {
+// 	0% {
+// 		stroke-dashoffset: 4500;
+// 		fill: var(--secoondary-2);
+// 		stroke-dasharray: 700;
+// 	}
+// 	100% {
+// 		stroke-dashoffset: 0;
+
+// 		fill: var(--primarry-1);
+// 		stroke-dasharray: 3000;
+// 	}
+// }
+
+.name-container {
+	height: 40px;
+	overflow: hidden;
+}
+
+.logo-name {
+	color: var(--accent);
+	font-size: 30px;
+	letter-spacing: 15px;
+	text-transform: uppercase;
+	margin-left: 20px;
+	font-weight: bolder;
+}
+
+.tag-svg {
+	min-width: 50px;
+	max-width: 200px;
+}
