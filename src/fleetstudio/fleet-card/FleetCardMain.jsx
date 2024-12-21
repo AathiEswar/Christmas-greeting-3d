@@ -2,10 +2,11 @@ import React, { lazy, Suspense, useEffect } from 'react'
 import './style.scss'
 import { Canvas } from '@react-three/fiber';
 import { Float, OrbitControls, Environment, Loader } from '@react-three/drei';
-const IntroFS = lazy(() => import('./components/Intro/IntroFS'))
 import GreetingCard from './components/greetingsCard/GreetingCard';
 import { useInsideContext } from './context/InsideContext';
-const ScaledSnowGlobe = lazy(() => import('./models/Resized-snowglobe'))
+
+import IntroFS from './components/Intro/IntroFS'
+import ScaledSnowGlobe from './models/Resized-snowglobe'
 
 function FleetCardMain() {
   const snowCount = 20;
