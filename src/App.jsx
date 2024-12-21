@@ -1,13 +1,19 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Home from './components/Home'
+import FleetCardMain from './fleetstudio/fleet-card/FleetCardMain'
+import InsideContext from './fleetstudio/fleet-card/context/InsideContext'
+
 function App() {
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home/>} />
+        <Route path='/'
+          element={
+            <InsideContext>
+              <FleetCardMain />
+            </InsideContext>} />
       </Routes>
-    </BrowserRouter>    
+    </BrowserRouter>
   )
 }
 

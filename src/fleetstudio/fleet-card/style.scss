@@ -1,5 +1,6 @@
 .canvasContainer{
   background-color: #419CCB;
+  //background-color: black;
   overflow: hidden;
 }
 .snowflake {
@@ -35,4 +36,10 @@
 /* added small blur every 6 snowflakes*/
 .snowflake:nth-child(6n) {
   filter: blur(1px);
+}
+
+.text-cover {
+  color: transparent; /* Make the fill transparent */
+  -webkit-text-stroke: 2px var(--accent); /* White text stroke */
+  text-stroke: 2px var(--accent); /* Fallback for other browsers */
 }

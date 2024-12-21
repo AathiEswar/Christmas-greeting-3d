@@ -18,6 +18,41 @@
 	font-weight: normal; /* Optional: specify the weight */
 	font-style: normal; /* Optional: specify the style */
 }
+@font-face {
+	font-family: DrukCond;
+	src: url("/fonts/DrukCond-SuperItalic-Trial.otf");
+}
+@font-face {
+	font-family: DrukText;
+	src: url("/fonts/DrukText-Bold-Trial.otf");
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: "DrukTextMedium";
+	src: url("/fonts/DrukText-Medium-Trial.otf"), format("otf");
+}
+@font-face {
+	font-family: "Druk";
+	src: url("/fonts/Druk-Medium-Trial.otf");
+}
+.druk-cond-super {
+	font-family: "DrukCond", sans-serif;
+}
+.druk-text-heavy {
+	font-family: "DrukTextMedium";
+}
+.druk {
+	font-family: "Druk", sans-serif;
+}
+
+.space-grotesk-600 {
+	font-family: "Space Grotesk", serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+}
+
 
 .happy-text {
 	font-size: 150px;

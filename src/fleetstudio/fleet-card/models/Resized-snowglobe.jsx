@@ -57,6 +57,7 @@ export default function ScaledSnowGlobe(props) {
 
   useFrame((state, delta) => {
     checkIntersection(snowGlobeRef.current, delta)
+    snowGlobeRef2.current.rotation.y += 0.01
   })
 
   const checkIntersection = (object, delta) => {

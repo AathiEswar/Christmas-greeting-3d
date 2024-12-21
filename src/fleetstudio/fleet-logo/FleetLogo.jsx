@@ -6,10 +6,11 @@ import gsap from 'gsap';
 
 function FleetLogo() {
   useEffect(() => {
-    const textColor = 0x419CCB;
+    const textColor = 0x41cb6d;
     const endColor = new Three.Color(0xFFFFFF); // White
 
     const scene = new Three.Scene();
+    //scene.background = new Three.Color(0x0b090a);
     scene.background = new Three.Color(0x0b090a);
     const targetColor = new Three.Color(0x419CCB);
 
@@ -53,7 +54,7 @@ function FleetLogo() {
     sphere.position.set(0, 0, 0);
     sphere.castShadow = false;
     sphere.receiveShadow = false;
-    scene.add(sphere);
+    //scene.add(sphere);
 
     const sphereGeometry2 = new Three.SphereGeometry(0.002, 8, 8);
     const sphereMaterial2 = new Three.MeshBasicMaterial({ color: 0xffffff })
@@ -61,12 +62,12 @@ function FleetLogo() {
     sphere2.position.set(0, 0, 0);
     sphere.castShadow = false;
     sphere.receiveShadow = false;
-    scene.add(sphere2);
+    //scene.add(sphere2);
 
     const spotLight = new Three.SpotLight(0xffffff, 1);
     const spotLightBiggerCube = new Three.SpotLight(0xffffff, 1);
 
-    scene.add(group);
+    //scene.add(group);
 
     // const planeGeometry = new Three.PlaneGeometry(1000, 1000);
     // const planeMaterial = new Three.ShadowMaterial({ opacity: 0.5 });
@@ -84,7 +85,7 @@ function FleetLogo() {
     let BigCubePosX;
 
     loader.load('/fonts/Raleway_Medium.json', function (font) {
-      const geometry = new TextGeometry('Fleet Studio', {
+      const geometry = new TextGeometry('Aathi Eswar', {
         font: font,
         size: 1,
         depth: 1,

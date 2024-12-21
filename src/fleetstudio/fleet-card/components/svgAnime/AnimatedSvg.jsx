@@ -88,7 +88,7 @@ const AnimatedSVG = () => {
             key={index}
             d={d}
             stroke="#419ccb"
-            fill="var(--primary-1)"
+            fill="black"
           />
         ))}
       </g>

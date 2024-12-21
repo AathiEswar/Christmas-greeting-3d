@@ -6,6 +6,7 @@ const FleetLogo = lazy(() =>
 )
 import AnimatedSVG from '../svgAnime/AnimatedSvg';
 import { useInsideContext } from '../../context/InsideContext';
+import LoadingScreen from '../loader/LoadingScreen';
 function IntroFS(props) {
 
   const { inside } = useInsideContext();
@@ -38,32 +39,30 @@ function IntroFS(props) {
           delay: 11,
         }
       );
-      gsap.fromTo(".intro-screen", { background: '#0b090a' }, {
-        scale: (window.innerWidth <= 625 ? 0.4 : 0.2),
-        left: window.innerWidth / 2 - introScreenRect.width * (window.innerWidth <= 625 ? 0.5 : 0.1),
-        top: window.innerHeight / 2 * -1 + introScreenRect.height * (window.innerWidth <= 625 ? -5 : 0.1),
-        delay: 8,
-        duration: 1.5,
-        ease: "power3.inOut",
-        background: "transparent"
-      });
+      gsap.to(
+        ".intro-container",{
+          backgroundColor : 'transparent',
+          delay : 7
+        }
+      )
     }, introRef);
 
     return () => ctx.revert();
 
   }, []);
   return (
-    <Suspense fallback={<div className='h-screen w-screen bg-black'></div>}>
+    <Suspense fallback={<div className='h-screen w-screen'></div>}>
       <div ref={introRef} className='h-full w-full z-0'>
-        <div className={`intro-screen flex items-center justify-center `} >
-          <div ref={introContRef} className={`intro-container`}>
-            <FleetLogo />
-          </div>
-          <div className="loading-page">
+      <div className={`intro-screen flex items-center justify-center`} >
+          <div className="loading-page z-50">
             {/* <div className="name-container">
             <div className="logo-name">Welcome</div>
           </div> */}
             <AnimatedSVG />
+          </div>
+          <div ref={introContRef} className={`intro-container bg-black`}>
+            {/* <FleetLogo /> */}
+            <LoadingScreen/>
           </div>
         </div>
       </div>

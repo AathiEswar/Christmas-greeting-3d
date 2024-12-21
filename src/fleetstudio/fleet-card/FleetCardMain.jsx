@@ -1,22 +1,23 @@
 import React, { lazy, Suspense, useEffect } from 'react'
 import './style.scss'
 import { Canvas } from '@react-three/fiber';
-import { Float, OrbitControls, Environment } from '@react-three/drei';
+import { Float, OrbitControls, Environment, Loader } from '@react-three/drei';
 const IntroFS = lazy(() => import('./components/Intro/IntroFS'))
 import GreetingCard from './components/greetingsCard/GreetingCard';
 import { useInsideContext } from './context/InsideContext';
+import LoadingScreen from './components/loader/LoadingScreen';
 const ScaledSnowGlobe = lazy(() => import('./models/Resized-snowglobe'))
 
 function FleetCardMain() {
   const snowCount = 20;
   const { inside, setInside } = useInsideContext();
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setInside(true)
-    }, 10000);
-    return () => clearTimeout(timeout)
-  }, [])
+  // useEffect(() => {
+  //   const timeout = setTimeout(() => {
+  //     setInside(true)
+  //   }, 10000);
+  //   return () => clearTimeout(timeout)
+  // }, [])
 
   return (
 
@@ -25,7 +26,9 @@ function FleetCardMain() {
         {!inside && Array.from({ length: snowCount }).map((_, index) => (
           <div key={index} className="snowflake"></div>
         ))}
-        <IntroFS />
+        <a href='https://github.com/AathiEswar'>
+          <IntroFS />
+        </a>
         <Canvas
           className='!h-screen w-screen'
           style={{
@@ -48,13 +51,14 @@ function FleetCardMain() {
           />
           <Environment preset='studio' />
           <Float
-            speed={5}
+            speed={7}
             rotationIntensity={0}
             floatIntensity={1}
-            floatingRange={[-0.1, 0.1]} >
+            floatingRange={[-0.15, 0.15]} >
             <ScaledSnowGlobe />
           </Float>
         </Canvas>
+        <Loader/>
         <div className='w-full absolute bottom-0 flex justify-center'>
           <button onClick={() => {
             setInside(!inside);
@@ -64,6 +68,7 @@ function FleetCardMain() {
           </button>
         </div>
         <GreetingCard />
+        {/* <LoadingScreen/> */}
       </div>
     </Suspense>
   )
