@@ -13,7 +13,7 @@ function FleetCardMain() {
 
   return (
 
-    <Suspense fallback={<div className='h-screen w-screen bg-black'></div>}>
+    <Suspense fallback={<div className='h-screen w-screen bg-[var(--accent)]'></div>}>
       <div className={`canvasContainer`} style={{ position: 'relative', height: '100vh', width: '100vw' }}>
         {!inside && Array.from({ length: snowCount }).map((_, index) => (
           <div key={index} className="snowflake"></div>

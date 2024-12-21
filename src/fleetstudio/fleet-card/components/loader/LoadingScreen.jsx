@@ -1,44 +1,36 @@
-import { useProgress } from '@react-three/drei'
 import React, { useEffect } from 'react'
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+gsap.registerPlugin(useGSAP);
 
 function LoadingScreen() {
-  const { progress } = useProgress();
-  const radius = 50;
-  const circumference = 2 * Math.PI * radius;
-  const strokeDashoffset = circumference - (progress / 100) * circumference;
 
-  useEffect(() => {
+  useGSAP(() => {
     const ctx = gsap.context(() => {
 
+      const timeLineDefaults = { duration: 1, ease: "power3.inOut" }
+
       const timeline = gsap.timeline({
-        defaults: { duration: 1, ease: "power3.inOut" },
+        defaults: timeLineDefaults,
       });
       const timelineText1 = gsap.timeline({
-        defaults: { duration: 1, ease: "power3.inOut" }
+        defaults: timeLineDefaults,
       })
       const timelineText2 = gsap.timeline({
-        defaults: { duration: 1, ease: "power3.inOut" }
+        defaults: timeLineDefaults,
       })
       const timelineText3 = gsap.timeline({
-        defaults: { duration: 1, ease: "power3.inOut" }
-      })
-      gsap.set(".loader-text-container", {
-        scale: 0.2
+        defaults: timeLineDefaults,
       })
 
-      gsap.set('.tc1', {
-        y: "33dvh"
-      })
-      gsap.set('.tc2', {
-        y: 0,
-      })
-      gsap.set('.tc3', {
-        y: "-33dvh"
-      })
+      gsap.set(".loader-text-container", { scale: 0.2 })
+      gsap.set('.tc1', { y: "33dvh" })
+      gsap.set('.tc2', { y: 0, })
+      gsap.set('.tc3', { y: "-33dvh" })
+
+
       timelineText1.to('.tc1', {
         y: 0,
-        duration: 1,
         delay: 6,
       })
         .to(".tc1", {
@@ -48,12 +40,11 @@ function LoadingScreen() {
       timelineText2
         .to(".tc2", {
           x: "100dvw",
-          delay : 7,
+          delay: 7,
         })
 
       timelineText3.to('.tc3', {
         y: 0,
-        duration: 1,
         delay: 6,
       })
         .to('.tc3', {
