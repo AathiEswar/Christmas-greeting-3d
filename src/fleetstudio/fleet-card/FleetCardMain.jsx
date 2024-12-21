@@ -5,7 +5,6 @@ import { Float, OrbitControls, Environment, Loader } from '@react-three/drei';
 const IntroFS = lazy(() => import('./components/Intro/IntroFS'))
 import GreetingCard from './components/greetingsCard/GreetingCard';
 import { useInsideContext } from './context/InsideContext';
-import LoadingScreen from './components/loader/LoadingScreen';
 const ScaledSnowGlobe = lazy(() => import('./models/Resized-snowglobe'))
 
 function FleetCardMain() {

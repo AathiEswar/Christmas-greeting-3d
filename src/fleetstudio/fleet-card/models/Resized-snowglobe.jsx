@@ -12,7 +12,6 @@ import { easing } from 'maath'
 import FireWorks from '../components/snowglobe/Fireworks'
 import { useInsideContext } from '../context/InsideContext'
 import { useGSAP } from '@gsap/react'
-import { useControls } from "leva";
 gsap.registerPlugin(useGSAP)
 
 export default function ScaledSnowGlobe(props) {
@@ -130,20 +129,6 @@ export default function ScaledSnowGlobe(props) {
   return (
     <group {...props} dispose={null} position={[0, -1, 0]}>
       <mesh ref={snowGlobeRef} geometry={nodes.build_scenebuild_sceneSnow_Scene_Snow_Globe___Default1_0.geometry} material={materials.PaletteMaterial001} scale={0.08} >
-        {/* <MeshTransmissionMaterial
-          backsideThickness={8}
-          samples={4}
-          thickness={0.9}
-          anisotropicBlur={0.8}
-          ior={1.8}
-          iridescence={0.5}
-          iridescenceIOR={1}
-          iridescenceThicknessRange={[0, 1400]}
-          clearcoat={1}
-          roughness={0}
-          envMapIntensity={0.7}
-          metalness={0.3}
-        /> */}
         <MeshTransmissionMaterial
           thickness={0.9}
           anisotropicBlur={0.8}

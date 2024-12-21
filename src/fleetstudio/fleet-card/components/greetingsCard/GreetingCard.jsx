@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap';
 import { useInsideContext } from '../../context/InsideContext';
-function GreetingCard(props) {
+function GreetingCard() {
 	const cardRef = useRef(null)
 	const { inside } = useInsideContext();
 	useEffect(() => {

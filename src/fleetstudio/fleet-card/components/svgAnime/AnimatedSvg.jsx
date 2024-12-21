@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import '../Intro/style.scss'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";

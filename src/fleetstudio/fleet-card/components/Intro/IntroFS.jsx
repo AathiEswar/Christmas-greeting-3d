@@ -1,13 +1,10 @@
-import React, { useEffect, useRef, Suspense, lazy } from 'react'
+import React, { useEffect, useRef} from 'react'
 import './style.scss'
 import gsap from 'gsap';
-const FleetLogo = lazy(() =>
-  import('../../../fleet-logo/FleetLogo')
-)
 import AnimatedSVG from '../svgAnime/AnimatedSvg';
 import { useInsideContext } from '../../context/InsideContext';
 import LoadingScreen from '../loader/LoadingScreen';
-function IntroFS(props) {
+function IntroFS() {
 
   const { inside } = useInsideContext();
 
@@ -51,23 +48,16 @@ function IntroFS(props) {
 
   }, []);
   return (
-    <Suspense fallback={<div className='h-screen w-screen'></div>}>
       <div ref={introRef} className='h-full w-full z-0' style={{pointerEvents : "none"}}>
       <div className={`intro-screen flex items-center justify-center`} >
           <div className="loading-page z-40">
-            {/* <div className="name-container">
-            <div className="logo-name">Welcome</div>
-          </div> */}
             <AnimatedSVG />
           </div>
           <div ref={introContRef} className={`intro-container bg-black`}>
-            {/* <FleetLogo /> */}
             <LoadingScreen/>
           </div>
         </div>
       </div>
-    </Suspense>
-
   )
 }
 
