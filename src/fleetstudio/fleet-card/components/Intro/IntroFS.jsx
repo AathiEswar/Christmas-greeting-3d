@@ -4,6 +4,9 @@ import gsap from 'gsap';
 import AnimatedSVG from '../svgAnime/AnimatedSvg';
 import { useInsideContext } from '../../context/InsideContext';
 import LoadingScreen from '../loader/LoadingScreen';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(useGSAP)
 function IntroFS() {
 
   const { inside } = useInsideContext();
@@ -11,7 +14,7 @@ function IntroFS() {
   const introRef = useRef();
   const introContRef = useRef();
 
-  useEffect(() => {
+  useGSAP(() => {
     const timeOut = setTimeout(() => {
       gsap.to(introRef.current, {
         duration: 0.5,
@@ -23,9 +26,7 @@ function IntroFS() {
     return () => clearTimeout(timeOut);
   }, [inside]);
 
-  useEffect(() => {
-    const introScreenRect = introContRef.current.getBoundingClientRect();
-
+  useGSAP(() => {
     let ctx = gsap.context(() => {
       gsap.to(
         ".loading-page",
@@ -39,7 +40,7 @@ function IntroFS() {
       gsap.to(
         ".intro-container",{
           backgroundColor : 'transparent',
-          delay : 7
+          delay : 8
         }
       )
     }, introRef);

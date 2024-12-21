@@ -34,13 +34,14 @@ function LoadingScreen() {
         delay: 6,
       })
         .to(".tc1", {
-          x: "-100dvw"
+          x: "-100dvw",
+          delay : 1,
         })
 
       timelineText2
         .to(".tc2", {
           x: "100dvw",
-          delay: 7,
+          delay: 8,
         })
 
       timelineText3.to('.tc3', {
@@ -49,6 +50,7 @@ function LoadingScreen() {
       })
         .to('.tc3', {
           x: "-200dvw",
+          delay : 1,
         })
 
       timeline
