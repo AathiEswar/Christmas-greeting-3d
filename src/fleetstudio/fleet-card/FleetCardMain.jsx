@@ -12,13 +12,6 @@ function FleetCardMain() {
   const snowCount = 20;
   const { inside, setInside } = useInsideContext();
 
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     setInside(true)
-  //   }, 10000);
-  //   return () => clearTimeout(timeout)
-  // }, [])
-
   return (
 
     <Suspense fallback={<div className='h-screen w-screen bg-black'></div>}>
@@ -26,9 +19,7 @@ function FleetCardMain() {
         {!inside && Array.from({ length: snowCount }).map((_, index) => (
           <div key={index} className="snowflake"></div>
         ))}
-        <a href='https://github.com/AathiEswar'>
           <IntroFS />
-        </a>
         <Canvas
           className='!h-screen w-screen'
           style={{
@@ -37,7 +28,6 @@ function FleetCardMain() {
             top: 0,
             left: 0,
           }}
-          // camera={{  position: [0, 0, 10] }}
           camera={{
             fov: 75,
             position: [0, 0, 5],
@@ -59,7 +49,8 @@ function FleetCardMain() {
           </Float>
         </Canvas>
         <Loader/>
-        <div className='w-full absolute bottom-0 flex justify-center'>
+        <GreetingCard />
+        <div className='w-full absolute bottom-0 flex justify-center z-50'>
           <button onClick={() => {
             setInside(!inside);
           }} className="button" type="button">
@@ -67,8 +58,6 @@ function FleetCardMain() {
             <img className="button-hat" src="https://assets.codepen.io/4175254/santa-hat-test-9.png" alt="" />
           </button>
         </div>
-        <GreetingCard />
-        {/* <LoadingScreen/> */}
       </div>
     </Suspense>
   )

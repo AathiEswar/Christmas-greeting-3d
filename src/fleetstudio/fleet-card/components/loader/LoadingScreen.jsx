@@ -82,7 +82,7 @@ function LoadingScreen() {
   return (
 
     <div
-      className="z-40 absolute top-0 left-0 w-screen h-screen flex items-center justify-center bg-[transparent] loader-text-container "
+      className="z-30 absolute top-0 left-0 w-screen h-screen flex items-center justify-center bg-[transparent] loader-text-container pointer-events-none "
       style={{ color: "var(--accent)" }}
     >
       <div className='w-full h-full bg-[transparent] flex flex-col justify-between items-center druk-text-heavy'>

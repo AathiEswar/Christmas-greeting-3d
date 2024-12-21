@@ -52,9 +52,9 @@ function IntroFS(props) {
   }, []);
   return (
     <Suspense fallback={<div className='h-screen w-screen'></div>}>
-      <div ref={introRef} className='h-full w-full z-0'>
+      <div ref={introRef} className='h-full w-full z-0' style={{pointerEvents : "none"}}>
       <div className={`intro-screen flex items-center justify-center`} >
-          <div className="loading-page z-50">
+          <div className="loading-page z-40">
             {/* <div className="name-container">
             <div className="logo-name">Welcome</div>
           </div> */}
