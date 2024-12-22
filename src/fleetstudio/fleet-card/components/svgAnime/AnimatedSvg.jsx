@@ -40,9 +40,7 @@ const AnimatedSVG = () => {
     { x: 0, y: 500 },
     { x: 0, y: -500 },
   ];
-
-  // const svgRef = useRef(null);
-
+  
   useGSAP(() => {
     const timeline = gsap.timeline({ defaults: { ease: "power3.inOut" } });
     gsap.set("#svg path", {
