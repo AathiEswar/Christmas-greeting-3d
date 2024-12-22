@@ -115,12 +115,12 @@
 }
 
 .christmas-text {
-	text-shadow: 10px 1px #d32f2f, -1px 1px #d32f2f, 1px 1px #d32f2f,
+	text-shadow: 7px 1px #d32f2f, -1px 1px #d32f2f, 1px 1px #d32f2f,
 		1px -1px #d32f2f;
 
 		@media (max-width: 1023px) {
 			text-shadow: 
-				7px 1px #d32f2f,
+				4px 1px #d32f2f,
 				 -1px 1px #d32f2f, 
 				1px 1px #d32f2f,
 				1px -1px #d32f2f;
