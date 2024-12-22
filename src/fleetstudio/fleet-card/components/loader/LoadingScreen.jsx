@@ -24,12 +24,12 @@ function LoadingScreen() {
       })
 
       gsap.set(".loader-text-container", { scale: 0.2 })
-      gsap.set('.tc1-text', { y: "33dvh" })
+      gsap.set('.tc1', { y: "33dvh" })
       gsap.set('.tc2', { y: 0, })
-      gsap.set('.tc3-text', { y: "-33dvh" })
+      gsap.set('.tc3', { y: "-33dvh" })
 
 
-      timelineText1.to('.tc1-text', {
+      timelineText1.to('.tc1', {
         y: 0,
         delay: 6,
       })
@@ -44,7 +44,7 @@ function LoadingScreen() {
           delay: 7.5,
         })
 
-      timelineText3.to('.tc3-text', {
+      timelineText3.to('.tc3', {
         y: 0,
         delay: 6,
       })
