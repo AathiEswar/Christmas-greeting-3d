@@ -79,18 +79,18 @@ function LoadingScreen() {
       style={{ color: "var(--accent)" }}
     >
       <div className='w-full h-full bg-[transparent] flex flex-col justify-between items-center druk-text-heavy'>
-        <div className="z-10 flex justify-center items-center w-screen h-screen text-[25vw] sm:text[20dvw] md:text-[15dvw] leading-none text-center text-cover tc1 bg-black">
+        <div className="z-0 flex justify-center items-center w-screen h-screen text-[25vw] sm:text[20dvw] md:text-[15dvw] leading-none text-center text-cover tc1 bg-black">
           <p className='tc1-text z-10 w-full h-full'>
             AATHI ESWAR
           </p>
         </div>
-        <div className="z-0 flex justify-center items-center w-screen h-screen text-[25vw] sm:text[20dvw] md:text-[15dvw] leading-none  text-center bg-black tc2">
-          <p className='z-0 tc2-text  w-full h-full'>
+        <div className="z-10 flex justify-center items-center w-screen h-screen text-[25vw] sm:text[20dvw] md:text-[15dvw] leading-none  text-center bg-black tc2">
+          <p className='z-10 tc2-text  w-full h-full'>
             AATHI ESWAR
           </p>
         </div>
-        <div className="z-10 flex justify-center items-center w-screen h-screen text-[25vw] sm:text[20dvw] md:text-[15dvw] leading-none text-center text-cover tc3 bg-black">
-          <p className='z-10 tc3-text  w-full h-full'>
+        <div className="z-0 flex justify-center items-center w-screen h-screen text-[25vw] sm:text[20dvw] md:text-[15dvw] leading-none text-center text-cover tc3 bg-black">
+          <p className='z-0 tc3-text  w-full h-full'>
             AATHI ESWAR
           </p>
         </div>
