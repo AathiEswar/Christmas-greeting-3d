@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect } from 'react'
+import React, { lazy, Suspense, useEffect, useState } from 'react'
 import './style.scss'
 import { Canvas } from '@react-three/fiber';
 import { Float, OrbitControls, Environment, Loader } from '@react-three/drei';
@@ -11,6 +11,15 @@ import ScaledSnowGlobe from './models/Resized-snowglobe'
 function FleetCardMain() {
   const snowCount = 20;
   const { inside, setInside } = useInsideContext();
+  const [audioState , setAudioState] = useState(false);
+  const BackgroundAudio = new Audio("/audio/christmas-bg.mp3");
+
+  function handleAudioState(){
+    if(audioState == false){
+      setAudioState(true)
+      BackgroundAudio.play();
+    }
+  }
 
   return (
 
@@ -53,6 +62,7 @@ function FleetCardMain() {
         <div className='w-full absolute bottom-0 flex justify-center z-50'>
           <button onClick={() => {
             setInside(!inside);
+            handleAudioState();
           }} className="button" type="button">
             {inside ? "Click to Move Out" : "Click Me for a Surprise"}
             <img className="button-hat" src="https://assets.codepen.io/4175254/santa-hat-test-9.png" alt="" />
